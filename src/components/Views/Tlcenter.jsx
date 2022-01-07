@@ -29,13 +29,15 @@ const TlcenterView = props => {
     
   return (
       <Container id="view-wrapper talklist-view">
+        <div class="ui two column very relaxed stackable grid">
+        <div class="twelf wide column">
       <article id="content">
         <header>
           <h1 className="documentFirstHeading">{content.title}</h1>
           {content.description && (
             <p className="documentDescription">{content.description}</p>
           )}
-        </header>
+        </header>    
         <section id="content-core">
         <h2>Most Recent {content.title}</h2>
           {tlprojects &&
@@ -59,6 +61,19 @@ const TlcenterView = props => {
             ))}
         </section>
       </article>
+      </div>
+      <div class="four wide column">
+        <h2>{content.product_title}</h2>
+      <p>
+        {content.product_description && (
+            <span>{content.product_description}</span>
+          )}
+          <br />
+        <span>Currently there are </span>
+        <span>[...] project(s) available.</span></p>
+      <h3><Link to={'/add?type=tlproject'}>Submit Your Project</Link></h3>
+      </div>
+      </div>
     </Container>
   )
 };
