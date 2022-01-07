@@ -1,10 +1,11 @@
 import React from 'react';
-import { Container, Segment } from 'semantic-ui-react';
+import { Container, Image, Segment } from 'semantic-ui-react';
 import { Helmet } from '@plone/volto/helpers';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { getVocabulary, getVocabularyTokenTitle } from '@plone/volto/actions';
 import { Categories } from '~/components';
+import { flattenToAppURL } from '@plone/volto/helpers';
 
 const TlprojectView = props => {
     
@@ -22,6 +23,8 @@ const TlprojectView = props => {
       <>
       
       <Container id="view-wrapper project-view">
+      <div class="ui two column very relaxed stackable grid">
+        <div class="twelf wide column">
       <Helmet title={content.title} />
       <h1 className="documentFirstHeading">
         {content.title}
@@ -40,6 +43,22 @@ const TlprojectView = props => {
       <h4>License(s)</h4>
       <h4>Compatibility</h4>
       <h2>Available Downloads</h2>
+      </div>
+      <div class="four wide column">
+        <h2>Project Ressources</h2>
+        <h3>Screenshot</h3>
+        <Image 
+                    src={flattenToAppURL(content.screenshot.scales.preview.download)}
+                    size="tile"
+                    floated="left"
+                    alt={content.image_caption}                
+                  />
+        <h3>Install Instructions</h3>
+        <h3>Contact The Author</h3>
+        <p>You can send a message to the author of the project and give him feedback 
+          by following the link and fill in your information into the form:</p>
+      </div>
+      </div>
       
       </Container>
       </>
