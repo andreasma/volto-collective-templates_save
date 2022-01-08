@@ -1,9 +1,8 @@
 import React from 'react';
-import { Container, Image, Segment } from 'semantic-ui-react';
+import { Container, Image} from 'semantic-ui-react';
 import { Helmet } from '@plone/volto/helpers';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { getVocabulary, getVocabularyTokenTitle } from '@plone/volto/actions';
 import { Categories } from '~/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 
@@ -33,7 +32,10 @@ const TlprojectView = props => {
       <h3>Release Number</h3>
       <p>{content.releasenumber}</p>
       <h3>Category/Categories</h3>
-      <p>Test: keywords: {JSON.stringify(keywords)}</p>
+      <p>
+      {content.category_choice.map((categorie, index) =>
+      <span key={index}>{categorie.title}, </span> )}
+      </p>
       <Categories />
      
       <h4>License(s)</h4>
