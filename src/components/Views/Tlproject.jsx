@@ -38,38 +38,40 @@ const TlprojectView = props => {
      
       <h4>License(s)</h4>
       <h4>Compatibility</h4>
-      <h2>Available Downloads</h2>
-      <p>
-      {content.file?.download && (
+      <h2>Available Downloads</h2>      
+      {content.file?.download && (<p><span>
       <a href={flattenToAppURL(content.file.download)}>
         {content.file.filename}
-      </a>
+      </a></span><span>  for:  </span>
+      {content.platform_choice.map((platform, index) =>
+        <span key={index}>{platform.title}, </span>
       )}
       <br />
-      {content.file?.download && (
       <span>File size: {content.file.size} kb</span>
-      )}
       </p>
-      <p>
-      {content.file1?.download && (
+      )}
+      {content.file1?.download && (<p><span>
       <a href={flattenToAppURL(content.file1.download)}>
         {content.file1.filename}
-      </a>
+      </a></span><span>  for:  </span>
+      {content.platform_choice1.map((platform, index) =>
+        <span key={index}>{platform.title}, </span>
       )}
-      {content.file1?.download && (      
+      <br />
       <span>File size: {content.file1.size} kb</span>
-      )}
       </p>
-      <p>
-      {content.file2?.download && (
+      )}
+      {content.file2?.download && (<p><span>
       <a href={flattenToAppURL(content.file2.download)}>
         {content.file2.filename}
-      </a>
+      </a></span><span>  for:  </span>
+      {content.platform_choice2.map((platform, index) =>
+        <span key={index}>{platform.title}, </span>
       )}
-      {content.file2?.download && (      
+      <br />
       <span>File size: {content.file2.size} kb</span>
-      )}
       </p>
+      )}
       </div>
       <div class="four wide column">
         <h2>Project Ressources</h2>
