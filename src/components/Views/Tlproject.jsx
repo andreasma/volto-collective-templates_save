@@ -15,10 +15,6 @@ const TlprojectView = props => {
     let location = useLocation();
     const content = useSelector((store) => store.content.data);
 
-  
-
-
-
     return (
       <>
       
@@ -39,10 +35,41 @@ const TlprojectView = props => {
       <h3>Category/Categories</h3>
       <p>Test: keywords: {JSON.stringify(keywords)}</p>
       <Categories />
-
+     
       <h4>License(s)</h4>
       <h4>Compatibility</h4>
       <h2>Available Downloads</h2>
+      <p>
+      {content.file?.download && (
+      <a href={flattenToAppURL(content.file.download)}>
+        {content.file.filename}
+      </a>
+      )}
+      <br />
+      {content.file?.download && (
+      <span>File size: {content.file.size} kb</span>
+      )}
+      </p>
+      <p>
+      {content.file1?.download && (
+      <a href={flattenToAppURL(content.file1.download)}>
+        {content.file1.filename}
+      </a>
+      )}
+      {content.file1?.download && (      
+      <span>File size: {content.file1.size} kb</span>
+      )}
+      </p>
+      <p>
+      {content.file2?.download && (
+      <a href={flattenToAppURL(content.file2.download)}>
+        {content.file2.filename}
+      </a>
+      )}
+      {content.file2?.download && (      
+      <span>File size: {content.file2.size} kb</span>
+      )}
+      </p>
       </div>
       <div class="four wide column">
         <h2>Project Ressources</h2>
