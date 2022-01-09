@@ -39,7 +39,15 @@ const TlprojectView = props => {
       <Categories />
      
       <h4>License(s)</h4>
+      <p>
+        {content.licenses_choice.map((license, index) =>
+          <span key={index}>{license.title}, </span>)}
+      </p>
       <h4>Compatibility</h4>
+      <p>
+        {content.compatibility_choice.map((compatibility, index) =>
+        <span key={index}>{compatibility.title}, </span>)}
+      </p>
       <h2>Available Downloads</h2>      
       {content.file?.download && (<p><span>
       <a href={flattenToAppURL(content.file.download)}>
