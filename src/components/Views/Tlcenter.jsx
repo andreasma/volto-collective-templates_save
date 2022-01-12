@@ -4,6 +4,7 @@ import { searchContent } from '@plone/volto/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import { OwnProjects } from '~/components';
 
 const TlcenterView = props => {
     const { content } = props;
@@ -18,6 +19,7 @@ const TlcenterView = props => {
           {
             portal_type: ['tlproject'],
             fullobjects: true,
+            review_state: 'published',
             b_size: 5,
             sort_on: 'effective',
             sort_order: 'reverse',
@@ -29,8 +31,8 @@ const TlcenterView = props => {
     
   return (
       <Container id="view-wrapper talklist-view">
-        <div class="ui two column very relaxed stackable grid">
-        <div class="twelf wide column">
+        <div className="ui two column very relaxed stackable grid">
+        <div className="twelf wide column">
       <article id="content">
         <header>
           <h1 className="documentFirstHeading">{content.title}</h1>
@@ -62,7 +64,7 @@ const TlcenterView = props => {
         </section>
       </article>
       </div>
-      <div class="four wide column">
+      <div className="four wide column">
         <h2>{content.product_title}</h2>
       <p>
         {content.product_description && (
@@ -72,6 +74,7 @@ const TlcenterView = props => {
         <span>Currently there are </span>
         <span>[...] project(s) available.</span></p>
       <h3><Link to={'/add?type=tlproject'}>Submit Your Project</Link></h3>
+      <OwnProjects />
       </div>
       </div>
     </Container>
