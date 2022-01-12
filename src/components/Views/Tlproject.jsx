@@ -18,8 +18,8 @@ const TlprojectView = props => {
       <>
       
       <Container id="view-wrapper project-view">
-      <div class="ui two column very relaxed stackable grid">
-        <div class="twelf wide column">
+      <div className="ui two column very relaxed stackable grid">
+        <div className="twelf wide column">
       <Helmet title={content.title} />
       <h1 className="documentFirstHeading">
         {content.title}
@@ -82,8 +82,9 @@ const TlprojectView = props => {
       <span>File size: {content.file2.size} kb</span>
       </p>
       )}
+      <h4>Legal Disclaimer And Limitations For Downloads</h4>
       </div>
-      <div class="four wide column">
+      <div className="four wide column">
         <h2>Project Ressources</h2>
         <h3>Screenshot</h3>
         <Image 
