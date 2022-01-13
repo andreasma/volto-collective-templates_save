@@ -75,6 +75,20 @@ const TlcenterView = props => {
         <span>[...] project(s) available.</span></p>
       <h3><Link to={'/add?type=tlproject'}>Submit Your Project</Link></h3>
       <OwnProjects />
+      <h2>Most recenct {content.product_title}</h2>
+      <h2>Browse {content.product_title} by Category</h2>
+      <h3>Install Instructions</h3>
+      <h3>Reporting {content.product_title}-Bugs</h3>
+      <h3>About</h3>
+      <h3>Contact a Project Author</h3>
+      <p>You can send a message to the author of the project and 
+        give him feedback by following the link and fill in your 
+        information into the form:<br />
+        (...)
+        <br />
+        You could instead go to the page of the project and use 
+        the mail form linked from that page.
+      </p>
       </div>
       </div>
     </Container>
