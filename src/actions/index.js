@@ -10,6 +10,6 @@
  *   searchContent,
  * };
  */
- import { getCategories } from './categories/categories';
+import { getCategories } from './categories/categories';
 
- export { getCategories };
+export { getCategories };
