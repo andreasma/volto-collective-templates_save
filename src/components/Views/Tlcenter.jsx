@@ -11,6 +11,9 @@ const TlcenterView = props => {
     const tlprojects = useSelector(
         (state) => state.search.subrequests.templateprojects?.items,
     );
+    const countprojects = useSelector(
+      (state) => state.search.subrequests.projectcount?.items,
+    );
     const dispatch = useDispatch();
     React.useEffect(() => {
       dispatch(
@@ -28,6 +31,20 @@ const TlcenterView = props => {
         ),
       );
      }, [dispatch]);
+
+     React.useEffect(() => {
+       dispatch(
+         searchContent(
+           '/',
+           {
+             portal_type: ['tlproject'],
+             review_state: 'published',
+           },
+           'projectcount',
+         ),
+       );
+     }, [dispatch]);
+
     
   return (
       <Container id="view-wrapper talklist-view">
